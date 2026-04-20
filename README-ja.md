@@ -6,8 +6,7 @@
 
 明示した前提から `C = 1 / f` を導く定理列、その帰結として得られる DDD ODE の性質、そして MFP のモード展開と整合する部分を収録します。数値実験やシミュレーションは含みません。
 
-**24 ファイル、136 定理、`sorry` なし。**
-Lean `v4.29.0`、Mathlib `v4.29.0`。
+**zero sorry, zero axiom, zero opaque.** Lean `v4.29.0`、Mathlib `v4.29.0`。
 
 ## 証明内容
 
@@ -33,53 +32,53 @@ Lean `v4.29.0`、Mathlib `v4.29.0`。
 
 ### `C = 1 / f` の導出
 
-| ファイル | 定理数 | 内容 |
-|------|------|------|
-| `DimensionalAnalysis` | 2 | 仕事率の次元を持つべき乗形は `E · ω` に限られる |
-| `FluxBasis` | 2 | 双線形反対称フラックスは `L` 型と `X` 型に分解できる |
-| `Transitivity` | 6 | 3モード閉包から `r(r − 1) = 0` を得て、候補が離散化する |
-| `UVConvergence` | 4 | 紫外発散する枝を有界性で棄却する |
-| `Factorization` | 3 | `ω_n + ω_m` は `h(ω_n) · h(ω_m)` に因子化できない |
-| `MasterTheorem` | 2 | 以上をまとめ、因子化可能な弱結合枝で `C = 1 / f` を得る |
+| ファイル | 内容 |
+|---|---|
+| `DimensionalAnalysis` | 仕事率の次元を持つべき乗形は `E · ω` に限られる |
+| `FluxBasis` | 双線形反対称フラックスは `L` 型と `X` 型に分解できる |
+| `Transitivity` | 3モード閉包から `r(r − 1) = 0` を得て、候補が離散化する |
+| `UVConvergence` | 紫外発散する枝を有界性で棄却する |
+| `Factorization` | `ω_n + ω_m` は `h(ω_n) · h(ω_m)` に因子化できない |
+| `MasterTheorem` | 以上をまとめ、因子化可能な弱結合枝で `C = 1 / f` を得る |
 
 ### 構造的な結果
 
-| ファイル | 定理数 | 内容 |
-|------|------|------|
-| `AlgebraicIdentities` | 3 | `k_eff = γ / f`、`k_int = 4πσ₁` などの恒等式 |
-| `CouplingTransform` | 7 | `γ → k` 変換の加算性、`Q(f)` 変換、`γ ∝ f → k = const` の構造 |
-| `NonlinearCapacity` | 4 | 非線形容量 `C^NL = 1 / [f(1 + βE)]` とその極限 |
-| `NonlinearSpatialExtension` | 7 | `ρ_NL = Eω + βωE²` という一次補正と、対角的な空間再構成の構造 |
-| `Duality` | 5 | `ω ↔ 1/ω` 双対と平衡の対応 |
-| `GaugeEquivalence` | 3 | `(C, k)` の再パラメータ化不変性 |
-| `EquivalenceFramework` | 7 | DDD・SEA的記述・action的記述・MFPの間で不変な観測量、MFP-DDD 位相平均一致 |
+| ファイル | 内容 |
+|---|---|
+| `AlgebraicIdentities` | `k_eff = γ / f`、`k_int = 4πσ₁` などの恒等式 |
+| `CouplingTransform` | `γ → k` 変換の加算性、`Q(f)` 変換、`γ ∝ f → k = const` の構造 |
+| `NonlinearCapacity` | 非線形容量 `C^NL = 1 / [f(1 + βE)]` とその極限 |
+| `NonlinearSpatialExtension` | `ρ_NL = Eω + βωE²` という一次補正と、対角的な空間再構成の構造 |
+| `Duality` | `ω ↔ 1/ω` 双対と平衡の対応 |
+| `GaugeEquivalence` | `(C, k)` の再パラメータ化不変性 |
+| `EquivalenceFramework` | DDD・SEA的記述・action的記述・MFPの間で不変な観測量、MFP-DDD 位相平均一致 |
 
 ### LCAM と MFP
 
-| ファイル | 定理数 | 内容 |
-|------|------|------|
-| `ChannelTransmission` | 9 | `T(s) = 4s(1 − s)` の対称性、上界、最大値 |
-| `ChannelCounting` | 5 | `N_eff = Σ T_α`、完全混成での飽和、全チャネル平均透過率による分解 |
-| `StandingTraveling` | 6 | 定在波の重ね合わせから進行波構造が現れること |
-| `DampedOscillator` | 5 | 減衰振動子の残差消去と関連恒等式 |
-| `Completeness` | 8 | スペクトル定理の帰結、1D コンパクト性ブリッジ |
-| `ModeExpansion` | 11 | 変数分離、多モード再構成、有限次元での完備性 |
+| ファイル | 内容 |
+|---|---|
+| `ChannelTransmission` | `T(s) = 4s(1 − s)` の対称性、上界、最大値 |
+| `ChannelCounting` | `N_eff = Σ T_α`、完全混成での飽和、全チャネル平均透過率による分解 |
+| `StandingTraveling` | 定在波の重ね合わせから進行波構造が現れること |
+| `DampedOscillator` | 減衰振動子の残差消去と関連恒等式 |
+| `Completeness` | スペクトル定理の帰結、1D コンパクト性ブリッジ |
+| `ModeExpansion` | 変数分離、多モード再構成、有限次元での完備性 |
 
 ### 動力学とスペクトル基盤
 
-| ファイル | 定理数 | 内容 |
-|------|------|------|
-| `DDDynamics` | 12 | 反対称性からの保存則、一意平衡、フラックス方向、Lyapunov代数、指数安定性 |
-| `MFPDDDConsistency` | 6 | 位相平均したMFPエネルギーが DDD 平衡と整合すること |
-| `PhaseAveraging` | 10 | 位相平均の形式化: 周期積分、積和公式、クロスモード直交性 |
-| `DirichletSpectrum1D` | 9 | 1D Dirichlet固有値・直交性・正規化を直接計算で証明 |
+| ファイル | 内容 |
+|---|---|
+| `DDDynamics` | 反対称性からの保存則、一意平衡、フラックス方向、Lyapunov代数、指数安定性 |
+| `MFPDDDConsistency` | 位相平均したMFPエネルギーが DDD 平衡と整合すること |
+| `PhaseAveraging` | 位相平均の形式化: 周期積分、積和公式、クロスモード直交性 |
+| `DirichletSpectrum1D` | 1D Dirichlet固有値・直交性・正規化を直接計算で証明 |
 
 ## 前提
 
 この導出は以下を仮定する。
 
 | 仮定 | 根拠 |
-|------|------|
+|---|---|
 | 閉じ込めから離散スペクトルが従う | 標準的 (Evans Ch.6)。Mathlib に未実装 |
 | ラプラシアンのコンパクト自己共役性 | 同上 (Rellich-Kondrachov) |
 
@@ -90,7 +89,7 @@ Lean `v4.29.0`、Mathlib `v4.29.0`。
 ## リポジトリ構成
 
 | パス | 役割 |
-|------|------|
+|---|---|
 | `Eigenraum.lean` | ライブラリ全体の入口 |
 | `Eigenraum/` | 主題ごとの定理ファイル |
 | `lakefile.toml` | Lean パッケージ定義 |
